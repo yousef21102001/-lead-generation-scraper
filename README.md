@@ -1,33 +1,35 @@
 lead-generation-scraper/
-├── .env.example                  # نموذج للمتغيرات البيئية
-├── requirements.txt              # تبعيات المشروع
-├── main.py                       # نقطة الدخول الرئيسية
-├── README.md                     # وثائق المشروع
+├── .env.example
+├── requirements.txt
+├── main.py
+├── README.md
 │
-├── app/                          # التطبيق الرئيسي
+├── app/
 │   ├── __init__.py
+│
+│   ├── core/
+│   │   ├── intent_detection.py
+│   │   ├── lead_scoring.py
+│   │   └── filtering.py
 │   │
-│   ├── api/                      # واجهات API
-│   │   ├── endpoints.py          # تعريف نقاط النهاية (Routes)
-│   │   └── schemas.py            # نماذج البيانات (Pydantic Schemas)
+│   ├── scrapers/
+│   │   ├── base_scraper.py
+│   │   ├── linkedin_scraper.py
+│   │   ├── twitter_scraper.py
+│   │   ├── khamsat_scraper.py
+│   │   └── freelance_scraper.py
 │   │
-│   ├── core/                     # المنطق الأساسي (Business Logic)
-│   │   ├── intent_detection.py   # كشف نية العميل (Intent Detection)
-│   │   ├── lead_scoring.py       # تقييم العملاء (Lead Scoring)
-│   │   └── filtering.py          # نظام الفلترة
+│   ├── services/
+│   │   ├── scraping_service.py
+│   │   └── lead_service.py
 │   │
-│   ├── scrapers/                 # وحدات استخراج البيانات
-│   │   ├── __init__.py
-│   │   ├── base_scraper.py       # الفئة الأساسية للمستخرجين
-│   │   ├── linkedin_scraper.py   # مستخرج لينكدإن
-│   │   ├── twitter_scraper.py    # مستخرج تويتر
-│   │   ├── khamsat_scraper.py    # مستخرج منصة خمسات
-│   │   ├── freelance_scraper.py  # مستخرج منصات العمل الحر
-│   │   └── ...                   # منصات أخرى
+│   ├── utils/
+│   │   ├── proxy_rotator.py
+│   │   ├── logger.py
+│   │   └── helpers.py
 │   │
-│   ├── utils/                    # أدوات مساعدة
-│   │   ├── proxy_rotator.py      # إدارة البروكسيات
-│   │   ├── logger.py             # نظام التسجيل (Logging)
-│   │   └── helpers.py            # دوال مساعدة
-│   │
-│   └── config.py                 # إعدادات التطبي
+│   └── config.py
+│
+└── tests/
+    ├── test_scrapers.py
+    └── test_intent_detection.py
