@@ -1,35 +1,32 @@
-lead-generation-scraper/
-├── .env.example
-├── requirements.txt
-├── main.py
-├── README.md
-│
-├── app/
-│   ├── __init__.py
-│
-│   ├── core/
-│   │   ├── intent_detection.py
-│   │   ├── lead_scoring.py
-│   │   └── filtering.py
-│   │
-│   ├── scrapers/
-│   │   ├── base_scraper.py
-│   │   ├── linkedin_scraper.py
-│   │   ├── twitter_scraper.py
-│   │   ├── khamsat_scraper.py
-│   │   └── freelance_scraper.py
-│   │
-│   ├── services/
-│   │   ├── scraping_service.py
-│   │   └── lead_service.py
-│   │
-│   ├── utils/
-│   │   ├── proxy_rotator.py
-│   │   ├── logger.py
-│   │   └── helpers.py
-│   │
-│   └── config.py
-│
-└── tests/
-    ├── test_scrapers.py
-    └── test_intent_detection.py
+# 🔍 AI Lead Generation Scrapers
+
+A modular, extensible scraping system for discovering **freelance leads and business opportunities** across multiple platforms using **web scraping + AI intent detection**.
+
+---
+
+## 🚀 Features
+
+- ✅ Modular OOP-based scraper architecture
+- ✅ Proxy rotation support
+- ✅ Anti-ban friendly (no login, no Selenium)
+- ✅ Intent Detection using NLP
+- ✅ Keyword matching
+- ✅ Multi-platform support
+- ✅ Easy to extend and customize
+
+---
+
+## 📦 Supported Platforms
+
+| Platform | Method |
+|--------|-------|
+| Twitter | Nitter (no login) |
+| LinkedIn | Google Dorking |
+| Freelance Platforms | Google Dorking |
+| Khamsat | Direct HTML scraping |
+| Others | Easily extendable |
+
+---
+
+## 🏗️ Project Structure
+
