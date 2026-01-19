@@ -72,3 +72,22 @@ def mark_proxy_failed(proxy: str):
     Public helper to mark proxy as failed
     """
     _proxy_rotator.mark_failed(proxy)
+
+
+proxy = get_proxy()
+
+try:
+    response = self.session.get(
+        url,
+        proxies={"http": proxy, "https": proxy} if proxy else None,
+        timeout=10
+    )
+    response.raise_for_status()
+    return response.text
+
+except Exception as e:
+    if proxy:
+        mark_proxy_failed(proxy)
+    logger.error(f"Error fetching {url}: {e}")
+    return None
+
